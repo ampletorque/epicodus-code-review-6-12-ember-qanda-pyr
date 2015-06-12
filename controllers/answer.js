@@ -1,5 +1,5 @@
 Pyr.AnswerController = Ember.ObjectController.extend({
-  needs: 'question',
+  needs: ['question'],
   isEditing: false,
   actions: {
     edit: function() {
@@ -12,14 +12,11 @@ Pyr.AnswerController = Ember.ObjectController.extend({
     },
     delete: function() {
       if(confirm('Are you sure?')) {
-        // var myQuestion = this.get('controllers.question.model');
         var myAnswer = this.get('model');
-          // console.log(myAnswer);
+        var myQuestions = this.get('controllers.question.model');
         var myQuestion = myAnswer.get('Question');
-          // console.log(myQuestion);
         myQuestion.get('answers').removeObject(myAnswer);
-          console.log(myQuestion.get('answers'));
-        myQuestion.save();
+        myQuestions.save();
         myAnswer.destroyRecord();
         // this.get('model').destroyRecord();
         this.transitionToRoute('questions');
