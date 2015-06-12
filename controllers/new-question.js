@@ -10,7 +10,7 @@ Pyr.NewQuestionController = Ember.Controller.extend({
       this.set('author', null);
       this.set('question', null);
       this.set('body', null);
-      this.transitionToRoute('questions');
+      this.transitionToRoute('question', newQuestion.get('id'));
     }
   }
 });
