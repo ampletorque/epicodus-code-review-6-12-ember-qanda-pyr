@@ -3,6 +3,9 @@ Pyr.QuestionsController = Ember.ArrayController.extend({
   actions: {
     sortByQuestion: function() {
       this.set('sortProperties', ['question']);
+    },
+    sortByAuthor: function() {
+      this.set('sortProperties', ['author']);
     }
   }
 });

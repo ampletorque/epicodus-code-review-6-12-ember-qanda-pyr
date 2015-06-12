@@ -9,9 +9,8 @@ Pyr.NewAnswerController = Ember.ObjectController.extend({
 
       var question = this.get('controllers.question.model');
       question.get('answers').pushObject(answer);
-      this.set('answerText', null);
       question.save();
-
+      this.set('answerText', null);
       this.transitionToRoute('question', question.id);
     }
   }

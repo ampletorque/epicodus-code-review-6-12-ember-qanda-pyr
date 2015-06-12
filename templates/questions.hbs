@@ -2,10 +2,12 @@
 
 <ul>
   {{#each question in this}}
-    <li>{{#link-to 'question' question.id}}{{question.question}}{{/link-to}}</li>
+    <li>{{#link-to 'question' question.id}}{{question.question}}{{/link-to}} by: {{question.author}}</li>
   {{/each}}
 </ul>
 
 <p><a href='#' {{action 'sortByQuestion'}}>Sort by question</a></p>
+<p><a href='#' {{action 'sortByAuthor'}}>Sort by author</a></p>
+
 
 {{#link-to 'new-question' classNames="btn btn-primary"}}New Question{{/link-to}}
