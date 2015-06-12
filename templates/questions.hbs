@@ -1,0 +1,11 @@
+<h1>Pregunta y Respuesta</h1>
+
+<ul>
+  {{#each question in this}}
+    <li>{{#link-to 'question' question.id}}{{question.question}}{{/link-to}}</li>
+  {{/each}}
+</ul>
+
+<p><a href='#' {{action 'sortByQuestion'}}>Sort by question</a></p>
+
+{{#link-to 'new-question' classNames="btn btn-primary"}}New Question{{/link-to}}

@@ -1,0 +1,1 @@
+Pyr = Ember.Application.create();
